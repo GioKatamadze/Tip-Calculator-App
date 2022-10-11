@@ -172,6 +172,9 @@ bill.addEventListener("input", function() {
         people.style.border = "";
     };
     billValidation ();
+    if (bill.value <= 0 ) {
+        bill.value = "";
+    };
 });
 
 people.addEventListener("input", function () {
@@ -184,6 +187,9 @@ people.addEventListener("input", function () {
         people.style.border = "";
     };
     peopleValidation();
+    if (people.value <= 0 ) {
+        people.value = "";
+    };
 });
 
 
