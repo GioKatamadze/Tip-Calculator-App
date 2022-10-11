@@ -1,5 +1,4 @@
 const tipButtons = Array.from(document.querySelectorAll(".tipbtn"));
-const tip5 = document.getElementById("tip5");
 let bill = document.getElementById("billAmount");
 let people = document.getElementById("peopleAmount");
 let reset = document.getElementById("reset");
@@ -64,7 +63,7 @@ function enableButton () {
 // Valiation Functions
 
 function billValidation () {
-    if (bill.value < 0 ) {
+    if (bill.value < 0) {
         bill.value = "";
         bill.style.border = "4px solid red"
         tipPerPerson.textContent = "0.00";
@@ -73,7 +72,15 @@ function billValidation () {
         reset.style.color = "#00474B";
         document.getElementById("zero1").style.display = "block";
         document.getElementById("zero1").style.marginBottom = "-20px"
+        document.getElementById("high1").style.display = "none";   
     }
+
+    if (bill.value > 0 && bill.value < 1000000) {
+        document.getElementById("high1").style.display = "none";
+        document.getElementById("zero1").style.display = "none";
+        bill.style.border = "";
+    }
+
     if (bill.value > 1000000) {
         bill.value = 1000000;
         bill.style.border = "4px solid red"
@@ -82,6 +89,7 @@ function billValidation () {
         enableButton ();
         document.getElementById("high1").style.display = "block";
         document.getElementById("high1").style.marginBottom = "-20px"
+        document.getElementById("zero1").style.display = "none";
     }
 }
 
@@ -95,7 +103,15 @@ function peopleValidation () {
         reset.style.color = "#00474B";
         document.getElementById("zero2").style.display = "block";
         document.getElementById("zero2").style.marginBottom = "-20px"
+        document.getElementById("high2").style.display = "none";
     }
+
+    if (people.value > 0 && people.value < 1000000) {
+        document.getElementById("high2").style.display = "none";
+        document.getElementById("zero2").style.display = "none";
+        people.style.border = "";
+    }
+
     if (people.value > 1000000) {
         people.value = 1000000;
         people.style.border = "4px solid red"
@@ -104,6 +120,7 @@ function peopleValidation () {
         enableButton ();
         document.getElementById("high2").style.display = "block";
         document.getElementById("high2").style.marginBottom = "-20px"
+        document.getElementById("zero2").style.display = "none";
     }
 }
 
@@ -114,6 +131,11 @@ function customTipValidation () {
         tipPerPerson.textContent = "0.00";
         totalPerPerson.textContent = "0.00";
     }
+
+    if (customTip.value > 0 && customTip.value < 99999) {
+        customTip.style.border = ""
+    }
+
     if (customTip.value <= 0) {
         customTip.value = "";
         customTip.style.border = "4px solid red"
