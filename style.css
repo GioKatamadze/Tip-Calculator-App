@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 
 :root {
-    --veryDarkCyans: hsl(183, 100%, 15%);
+    --veryDarkCyans: #00494d;
     --darkGrayishCyan: hsl(186, 14%, 43%);
     --grayishCyan: hsl(184, 14%, 56%);
     --lightGrayishCyan: hsl(185, 41%, 84%);
@@ -110,6 +110,7 @@ input {
     transition: 0.2s;
 }
 
+
 .tipButtons button:active {
     background-color: #9FE8DF;
     color: #00474B;
@@ -125,8 +126,13 @@ input {
     height: 48px;
 }
 
-
-
+.billBox p, .peopleBox p {
+    font-size: 16px;
+    font-weight: 700;
+    color: #E17457;
+    text-align: right;
+    display: none;
+}
 
 .screen {
     border-radius: 15px;
@@ -214,7 +220,8 @@ input {
         justify-content: center;
         flex-direction: row;
         border-radius: 25px;
-        width: 920px;
+        min-width: 920px;
+        max-width: 1025px;
         padding: 32px;
         margin-bottom: 240px;
     }
@@ -247,6 +254,4 @@ input {
     .screen button {
         margin-top: 122px;
     }
-
-
 }
