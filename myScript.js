@@ -99,11 +99,3 @@ reset.onclick = function () {
     totalPerPerson.textContent = "0.00";
    
 };
-
-
-
-
-
-
-
-
