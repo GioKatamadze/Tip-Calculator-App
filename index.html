@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <script src="myScript.js" defer ></script>
-    <element onload="myScript"></element>
     <title>Tip Calculator App</title>
 </head>
 <body>
@@ -23,6 +22,8 @@
         <div class="controls">
 
             <div class="billBox">
+                <p id="zero1" >Can’t be zero!</p>
+                <p id="high1" >Exceeds maximum!</p>
                 <label for="billAmount" id="billNumber" >Bill</label>
                 <input type="number" id="billAmount" placeholder="0.00">
             </div>
@@ -30,7 +31,7 @@
             <div class="tipButtonBox">
                 <h2 class="label" >Select Tip %</h2>
                 <div class="tipButtons">
-                    <button class="tipbtn" id="tip5" >5%</button>
+                    <button class="tipbtn" id="tip5" autofocus >5%</button>
                     <button class="tipbtn"id="tip10" >10%</button>
                     <button class="tipbtn" id="tip15" >15%</button>
                     <button class="tipbtn" id="tip25" >25%</button>
@@ -40,6 +41,8 @@
             </div>
 
             <div class="peopleBox">
+                <p id="zero2" >Can’t be zero!</p>
+                <p id="high2" >Exceeds maximum!</p>
                 <label for="peopleAmount">Number of People</label>
                 <input type="number" id="peopleAmount" placeholder="0">
             </div>
